@@ -7,7 +7,7 @@ export interface UseTheme {
     onThemeToggle: () => void;
 }
 
-export const useTheme = () => {
+export const useTheme = (): UseTheme => {
     const {theme, setTheme} = useContext(ThemeContext);
 
     const onThemeToggle = (): void => {
