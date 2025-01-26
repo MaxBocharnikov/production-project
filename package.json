@@ -10,7 +10,8 @@
     "lint:ts": "npx eslint -c eslint.config.mjs 'src/**/*.{ts,tsx}' 'config/**/*.ts'",
     "lint:ts:fix": "npx eslint -c eslint.config.mjs 'src/**/*.{ts,tsx}' 'config/**/*.ts' --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
-    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +19,11 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.18.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@svgr/webpack": "^6.2.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -43,6 +46,8 @@
     "file-loader": "^6.2.0",
     "globals": "^15.14.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "mini-css-extract-plugin": "^2.9.2",
     "react-refresh": "^0.16.0",
     "react-refresh-typescript": "^2.0.10",
