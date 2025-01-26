@@ -5,7 +5,6 @@ import ReactRefreshTypeScript from 'react-refresh-typescript';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const {isDev} = options;
-
     const babel = {
         test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,

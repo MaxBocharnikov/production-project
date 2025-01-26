@@ -3,8 +3,6 @@ import {useTranslation} from 'react-i18next';
 import {classNames} from 'shared/lib/classNames';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 
-import style from './SwitchLanguage.module.scss';
-
 interface SwitchLanguageProps {
     className?: string;
 }
@@ -20,7 +18,7 @@ export const SwitchLanguage: FC<SwitchLanguageProps> = (props) => {
         <Button
             theme={ButtonTheme.CLEAR}
             onClick={onLanguageChange}
-            className={classNames(style.SwitchLanguage, {}, [className])}
+            className={classNames(className)}
         >
             {t('Язык')}
         </Button>
