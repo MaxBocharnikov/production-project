@@ -5,7 +5,6 @@ const AboutPage = () => {
     const {t} = useTranslation('about');
     return (
         <div>
-            BRGHRT
             {t('О нас')}
         </div>
     );
