@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import {Theme, useTheme} from 'app/providers/ThemeProvider';
-import {classNames} from 'shared/lib/classNames';
+import {classNames} from 'shared/lib/classNames/classNames';
 import DarkThemeLogo from 'shared/assets/icons/theme-dark.svg';
 import LightThemeLogo from 'shared/assets/icons/theme-light.svg';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
