@@ -50,4 +50,10 @@ export default [
       "i18next/no-literal-string": ["error", { markupOnly: true }]
     }
   },
+   {
+     files: ["**/*.test.{js,ts,jsx,tsx}", "**/__tests__/**/*.{js,ts,jsx,tsx}"],
+     rules: {
+       "i18next/no-literal-string": "off",
+     },
+   },
 ];
