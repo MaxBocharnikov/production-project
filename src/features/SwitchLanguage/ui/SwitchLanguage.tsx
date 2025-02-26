@@ -4,11 +4,12 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 
 interface SwitchLanguageProps {
+    short?: boolean;
     className?: string;
 }
 
 export const SwitchLanguage: FC<SwitchLanguageProps> = (props) => {
-    const {className} = props;
+    const {short, className} = props;
     const {i18n, t} = useTranslation()
 
     const onLanguageChange = () => {
@@ -20,7 +21,7 @@ export const SwitchLanguage: FC<SwitchLanguageProps> = (props) => {
             onClick={onLanguageChange}
             className={classNames(className)}
         >
-            {t('Язык')}
+            {short ? t('Короткий язык') : t('Язык')}
         </Button>
     );
 };

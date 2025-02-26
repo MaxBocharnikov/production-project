@@ -3,7 +3,7 @@ import {fn} from '@storybook/test';
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 
-import {Button, ButtonTheme} from './Button';
+import {Button, ButtonSize, ButtonTheme} from './Button';
 
 const meta = {
     title: 'shared/Button',
@@ -39,6 +39,62 @@ export const Outlined: Story = {
     args: {
         children: 'Outlined',
         theme: ButtonTheme.OUTLINED
+    }
+};
+
+export const OutlinedL: Story = {
+    args: {
+        children: 'Outlined L',
+        theme: ButtonTheme.OUTLINED,
+        size: ButtonSize.L
+    }
+};
+
+export const OutlinedXl: Story = {
+    args: {
+        children: 'Outlined XL',
+        theme: ButtonTheme.OUTLINED,
+        size: ButtonSize.XL
+    }
+};
+
+export const Background: Story = {
+    args: {
+        children: 'Background',
+        theme: ButtonTheme.BACKGROUND
+    }
+};
+
+export const InvertedBackground: Story = {
+    args: {
+        children: 'InvertedBackground',
+        theme: ButtonTheme.BACKGROUND_INVERTED
+    }
+};
+
+export const Square: Story = {
+    args: {
+        children: '>',
+        square: true,
+        theme: ButtonTheme.BACKGROUND_INVERTED
+    }
+};
+
+export const SquareL: Story = {
+    args: {
+        children: '>',
+        square: true,
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        size: ButtonSize.L
+    }
+};
+
+export const SquareXL: Story = {
+    args: {
+        children: '>',
+        square: true,
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        size: ButtonSize.XL
     }
 };
 
