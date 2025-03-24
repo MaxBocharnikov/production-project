@@ -5,7 +5,6 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {Navbar} from 'widgets/Navbar';
 import {Sidebar} from 'widgets/Sidebar';
 import {PageLoader} from 'widgets/PageLoader';
-import './styles/index.scss'
 
 export const App = () => {
     const {theme} = useTheme();

@@ -6,6 +6,7 @@ import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import globals from "globals";
 import pluginI18next from "eslint-plugin-i18next";
+import reactHooks from "eslint-plugin-react-hooks";
 
  /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
@@ -40,7 +41,8 @@ export default [
     plugins: {
       "@typescript-eslint": typescriptEslint,
       react,
-      i18next: pluginI18next
+      i18next: pluginI18next,
+      "react-hooks": reactHooks,
     },
     rules: {
       "react/react-in-jsx-scope": "off",
@@ -48,7 +50,9 @@ export default [
       "react/display-name": "warn",
       "react/no-deprecated": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
-      "i18next/no-literal-string": ["error", { markupOnly: true }]
+      "i18next/no-literal-string": ["error", { markupOnly: true }],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error"
     }
   },
    {
