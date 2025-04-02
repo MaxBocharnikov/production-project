@@ -9,6 +9,10 @@ import {PageLoader} from 'widgets/PageLoader';
 export const App = () => {
     const {theme} = useTheme();
 
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme]);
+
     // useEffect(() => {
     //     if (Math.random() < 0.5) {
     //         throw new Error('');
@@ -16,7 +20,7 @@ export const App = () => {
     // }, []);
 
     return (
-        <div className={classNames('app', {}, [theme])}>
+        <div className={classNames('app')}>
             <Suspense fallback={<PageLoader />}>
                 <Navbar/>
                 <div className={'content-page'}>

@@ -17,7 +17,6 @@ const CLOSING_ANIMATION_DELAY_IN_MS: number = 300;
 export const Modal: FC<ModalProps> = (props) => {
     const {isOpen, onClose, children, className} = props;
 
-    const {theme} = useTheme();
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const closingTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -60,7 +59,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
     return (
         <Portal>
-            <div className={classNames(style.Modal, mods, [className, theme, 'app_modal'])}>
+            <div className={classNames(style.Modal, mods, [className])}>
                 <div className={style.overlay} onClick={closeHandler}>
                     <div className={style.content} onClick={onClickContent}>
                         {children}
