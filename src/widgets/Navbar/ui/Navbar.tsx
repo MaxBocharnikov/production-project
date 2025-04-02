@@ -18,7 +18,11 @@ export const Navbar: FC<NavbarProps> = (props) => {
 
     const onLoginClickHandler = useCallback((): void => {
         setIsAuthModalOpen(true);
-    }, [])
+    }, []);
+
+    const onLoginCloseHandler = useCallback((): void => {
+        setIsAuthModalOpen(false);
+    }, []);
 
     return (
         <div className={classNames(style.Navbar, {}, [className])}>
@@ -29,7 +33,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 >
                     {t('Войти')}
                 </Button>
-                <Modal isOpen={isAuthModalOpen} onClose={onLoginClickHandler}>
+                <Modal isOpen={isAuthModalOpen} onClose={onLoginCloseHandler}>
                     {/* eslint-disable-next-line i18next/no-literal-string */}
                     {/* eslint-disable-next-line i18next/no-literal-string */}
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
