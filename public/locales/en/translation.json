@@ -7,5 +7,7 @@
   "Войти": "Sign in",
   "Value": "Value",
   "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Decrement": "Decrement",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
 }

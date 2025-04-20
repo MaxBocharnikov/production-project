@@ -3,21 +3,23 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {Portal} from 'shared/ui/Portal/Portal';
 
 import style from './Modal.module.scss'
-import {useTheme} from 'app/providers/ThemeProvider';
+
 
 interface ModalProps {
     isOpen: boolean;
     onClose?: () => void;
     children?: ReactNode;
+    lazy?: boolean;
     className?: string;
 }
 
 const CLOSING_ANIMATION_DELAY_IN_MS: number = 300;
 
 export const Modal: FC<ModalProps> = (props) => {
-    const {isOpen, onClose, children, className} = props;
+    const {isOpen, onClose, lazy, children, className} = props;
 
     const [isClosing, setIsClosing] = useState<boolean>(false);
+    const [isMounted, setIsMounted] = useState<boolean>(false);
     const closingTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = useCallback((): void => {
@@ -56,6 +58,16 @@ export const Modal: FC<ModalProps> = (props) => {
             window.removeEventListener('keydown', onKeyDown);
         }
     }, [isOpen, onKeyDown]);
+
+    useEffect(() => {
+        if(isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    if(lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

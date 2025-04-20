@@ -3,7 +3,8 @@ import {useTranslation} from 'react-i18next';
 
 import {classNames} from 'shared/lib/classNames/classNames';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
-import {Modal} from 'shared/ui/Modal/Modal';
+import {LoginModal} from 'features/AuthByUserName';
+
 import style from './Navbar.module.scss';
 
 
@@ -33,11 +34,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 >
                     {t('Войти')}
                 </Button>
-                <Modal isOpen={isAuthModalOpen} onClose={onLoginCloseHandler}>
-                    {/* eslint-disable-next-line i18next/no-literal-string */}
-                    {/* eslint-disable-next-line i18next/no-literal-string */}
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
-                </Modal>
+                <LoginModal isOpen={isAuthModalOpen} onClose={onLoginCloseHandler} />
             </div>
         </div>
     );
