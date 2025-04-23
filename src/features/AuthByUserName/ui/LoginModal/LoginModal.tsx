@@ -3,8 +3,6 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {Modal} from 'shared/ui/Modal/Modal';
 import {LoginForm} from 'features/AuthByUserName/ui/LoginForm/LoginForm';
 
-import style from './LoginModal.module.scss';
-
 
 interface LoginModalProps {
     isOpen: boolean;
@@ -19,7 +17,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
             isOpen={isOpen}
             lazy={true}
             onClose={onClose}
-            className={classNames(style.LoginModal, {}, [className])}>
+            className={className}>
             <LoginForm />
         </Modal>
     );

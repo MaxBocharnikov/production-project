@@ -1,10 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {fn} from '@storybook/test';
-import {Input} from '../Input/Input';
+import {LoginModal} from '../LoginModal/LoginModal';
 
 const meta = {
-    title: 'shared/Input',
-    component: Input,
+    title: 'features/LoginModal',
+    component: LoginModal,
     parameters: {
         //layout: 'fullscreen',
     },
@@ -12,8 +11,7 @@ const meta = {
     argTypes: {
         //backgroundColor: { control: 'color' },
     },
-    args: { onClick: fn() },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof LoginModal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -21,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        placeholder: 'Type text',
-        value: '123123',
+        isOpen: false,
+        onClose: () => {},
     }
 };

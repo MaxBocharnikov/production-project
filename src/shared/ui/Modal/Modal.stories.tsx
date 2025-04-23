@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        isOpen: true,
+        isOpen: false,
         children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     },
     parameters: {

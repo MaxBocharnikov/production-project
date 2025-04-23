@@ -47,6 +47,7 @@ export const Input = memo((props: InputProps) => {
         setIsFocused(true);
     };
 
+    //eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const onSelect = (e: any) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
