@@ -5,13 +5,20 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {Navbar} from 'widgets/Navbar';
 import {Sidebar} from 'widgets/Sidebar';
 import {PageLoader} from 'widgets/PageLoader';
+import {useDispatch} from 'react-redux';
+import {userActions} from 'entities/User';
 
 export const App = () => {
     const {theme} = useTheme();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         document.body.className = theme;
     }, [theme]);
+
+    useEffect(() => {
+        dispatch(userActions.initUserData());
+    }, [dispatch]);
 
     // useEffect(() => {
     //     if (Math.random() < 0.5) {

@@ -47,7 +47,7 @@ export default [
     rules: {
       "react/react-in-jsx-scope": "off",
       "@typescript-eslint/ban-ts-comment": "warn",
-      "react/display-name": "warn",
+      "react/display-name": "off",
       "react/no-deprecated": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
       "i18next/no-literal-string": ["error", { markupOnly: true }],

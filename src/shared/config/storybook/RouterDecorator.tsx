@@ -1,9 +1,9 @@
-import 'app/styles/index.scss';
-import {StoryFn} from '@storybook/react';
+import type {Decorator} from '@storybook/react';
 import {BrowserRouter} from 'react-router-dom';
+import 'app/styles/index.scss';
 
-export const RouterDecorator = (StoryComponent: StoryFn) => (
+export const RouterDecorator: Decorator = (Story, context) => (
     <BrowserRouter>
-        <StoryComponent/>
+        <Story {...context.args} />
     </BrowserRouter>
-)
+);

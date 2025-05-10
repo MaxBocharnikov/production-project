@@ -5,9 +5,12 @@
   "Кажется что-то пошло не так": "Looks like something went wrong",
   "Перезагрузить страницу": "Reload the page",
   "Войти": "Sign in",
+  "Выйти": "Sign out",
   "Value": "Value",
   "Increment": "Increment",
   "Decrement": "Decrement",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Auth form",
+  "Ошибка авторизации": "Enter correct data"
 }

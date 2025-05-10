@@ -98,6 +98,13 @@ export const SquareXL: Story = {
     }
 };
 
+export const Disabled: Story = {
+    args: {
+        children: 'Button',
+        disabled: true,
+    }
+};
+
 export const PrimaryDark: Story = {
     args: {
         children: 'Button dark'
@@ -121,6 +128,16 @@ export const OutlinedDark: Story = {
     args: {
         children: 'Outlined dark',
         theme: ButtonTheme.OUTLINED
+    },
+    decorators: [
+        ThemeDecorator(Theme.DARK)
+    ]
+};
+
+export const DisabledDark: Story = {
+    args: {
+        children: 'Button',
+        disabled: true,
     },
     decorators: [
         ThemeDecorator(Theme.DARK)
