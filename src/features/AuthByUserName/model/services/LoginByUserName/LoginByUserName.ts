@@ -22,7 +22,7 @@ export const loginByUserName = createAsyncThunk<User, LoginByUserNameArgs, {reje
             return response.data;
         } catch (error) {
             console.error(error);
-            return thunkAPI.rejectWithValue(i18n.t('Ошибка авторизации'));
+            return thunkAPI.rejectWithValue('Auth error');
         }
     },
 )

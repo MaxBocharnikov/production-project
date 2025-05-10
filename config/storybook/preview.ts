@@ -4,7 +4,6 @@ import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator';
 import {Theme} from 'app/providers/ThemeProvider';
 import {RouterDecorator} from 'shared/config/storybook/RouterDecorator';
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator';
-import {TranslationDecorator} from 'shared/config/storybook/TranslationDecorator';
 
 const preview: Preview = {
     parameters: {
@@ -19,7 +18,6 @@ const preview: Preview = {
         StyleDecorator,
         ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
-        TranslationDecorator,
         StoreDecorator({
             loginForm: {
                 username: '123',
