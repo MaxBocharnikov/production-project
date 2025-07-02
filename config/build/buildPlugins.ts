@@ -22,7 +22,8 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
     ];
     if(isDev) {
         result.push(new ReactRefreshWebpackPlugin());
-        result.push(new BundleAnalyzerPlugin({openAnalyzer: false}));
+    } else {
+        result.push(new BundleAnalyzerPlugin({ openAnalyzer: true, analyzerPort: 8889 }));
     }
     return result.filter(Boolean);
 }

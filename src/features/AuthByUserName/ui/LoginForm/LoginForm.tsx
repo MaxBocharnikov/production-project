@@ -8,21 +8,32 @@ import {loginActions} from '../../model/slice/loginSlice';
 import {getLoginState} from '../../model/selectors/getLoginState';
 import {loginByUserName} from '../../model/services/LoginByUserName/LoginByUserName';
 import {Text, TextTheme} from 'shared/ui/Text/Text';
+import {LoginReducer} from 'features/AuthByUserName';
+import {useDynamicReducer} from 'shared/lib/hooks/useDynamicReducer';
 
 import style from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
 
 
-export const LoginForm = memo((props: LoginFormProps) => {
+const LoginForm = memo((props: LoginFormProps) => {
+    useDynamicReducer([
+        {
+            key: 'loginForm',
+            reducer: LoginReducer,
+        }
+    ])
     const dispatch = useDispatch();
     const {className} = props;
     const {t} = useTranslation();
     const loginForm = useSelector(getLoginState);
 
-    const {username, password, error, isLoading} = loginForm;
+    const username = loginForm?.username;
+    const password = loginForm?.password;
+    const error = loginForm?.error;
+    const isLoading = loginForm?.isLoading;
 
     const onChangeUserName = useCallback((value: string) => {
         dispatch(loginActions.setUserName(value))
@@ -48,3 +59,5 @@ export const LoginForm = memo((props: LoginFormProps) => {
         </div>
     );
 });
+
+export default LoginForm;
